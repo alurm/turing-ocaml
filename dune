@@ -1,0 +1,5 @@
+(env
+ (dev
+  ; This seems wrong. These are useful and shouldn't be disabled.
+  (flags
+   (:standard -w -unused-value-declaration -w -unused-constructor -w -unused-field -w -unused-type-declaration))))
