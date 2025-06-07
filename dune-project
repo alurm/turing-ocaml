@@ -19,7 +19,7 @@
  (name turing)
  (synopsis "An interactive Turing machine interpreter")
  (description "A program that takes Turing machines in JSON an interprets them, visualizing execution. A project at the 42 programming school.")
- (depends ocaml)
+ (depends ocaml base core)
  (tags
   ()))
 

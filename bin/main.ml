@@ -1,7 +1,27 @@
 type direction = Left | Right
 
+module _ = Two
+
+module _ = Machine
+
+let m =
+  let module Ss = Machine.States in
+  let module S = Machine.State in
+  let key = Machine.key in 0
+  (* Ss.singleton (key 0)  *)
+
+module _ = Base
+
+(* let _ = Two.Machine.Left
+
+module _ = Two.Machine
+
+type t = Two.Machine.direction *)
+
+(* let _ = Two.Machine.((Left : direction)) *)
+
 (* https://en.wikipedia.org/wiki/Turing_machine *)
-module type Machine = sig
+module type MachineDescription = sig
   module Symbol : Set.OrderedType
   module Alphabet : Set.S with type elt = Symbol.t
   module Transition : Map.S with type key = Symbol.t
@@ -20,7 +40,7 @@ module type Machine = sig
   val final_state : state
 end
 
-module Machine : Machine = struct
+module MachineDescription : MachineDescription = struct
   module Symbol = Char
   module Alphabet = Set.Make (Symbol)
   module Transition = Map.Make (Symbol)
@@ -41,4 +61,8 @@ module Machine : Machine = struct
     transition = Transition.of_list [];
   }
   let final_state = initial_state
+end
+
+module Machine (Description : MachineDescription) = struct
+  
 end

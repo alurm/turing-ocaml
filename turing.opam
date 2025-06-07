@@ -11,6 +11,8 @@ bug-reports: "https://github.com/alurm/turing-ocaml/issues"
 depends: [
   "dune" {>= "3.18"}
   "ocaml"
+  "base"
+  "core"
   "odoc" {with-doc}
 ]
 build: [

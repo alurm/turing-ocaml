@@ -19,6 +19,9 @@
           ocamlPackages.ocaml-lsp
           ocamlPackages.utop
 
+          ocamlPackages.base
+          ocamlPackages.core
+
           (vscode-with-extensions.override {
             vscode = vscodium;
             vscodeExtensions = with vscode-extensions; [
